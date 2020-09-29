@@ -1,0 +1,108 @@
+@import '../abstract/constants.scss';
+@import '../abstract/mixins.scss';
+
+.login--container {
+  background-image: url(../../img/common/backgrounds/background9.jpg);
+  background-size: cover;
+  height: calc(100vh - 143px);
+  font-family: 'Montserrat';
+  .wrapper {
+    display: flex;
+  }
+}
+
+.login__card {
+  position: relative;
+  width: 360px;
+  height: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow:3px 3px 3px darkgrey;
+  margin:auto;
+  text-align: center;
+  @include media-mobile-big {
+    width: calc(98% - 40px);
+    height: 340px;
+  }
+
+}
+
+.login__card_label{
+  font-size: 1.3rem;
+  margin: 20px 0 0;
+}
+
+.login__card_control {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+}
+
+.login__control_button {
+  padding: 8px;
+  margin: 0 9px;
+  color: grey;
+  cursor: pointer;
+  &.selected {
+    color: $linksHover;
+    text-decoration-line: underline;
+  }
+}
+
+.login__card_button {
+  cursor: pointer;
+  font-family: 'Montserrat';
+  width: 240px;
+  height: 40px;
+  margin: 20px 60px;
+  color: white;
+  border: 0;
+  outline: none;
+  border-radius: 6px;
+  transition: 0.1s;
+  font-size: 2rem;
+  background: rgb(64,199,129);
+  box-shadow: -3px -3px rgb(53,167,110) inset;
+  &:active{
+    background: rgb(33,147,90);
+    box-shadow: 3px 3px #17653e inset;
+  }
+  &:hover{
+    background: rgb(101, 218, 157);
+  } 
+  &.hidden {
+    display: none;
+  }
+  @include media-mobile-big {
+    margin: 20px calc(49% - 120px);
+  }
+}
+
+.login__card input {
+  width: 250px;
+  height: 35px;
+  border: 0;
+  outline: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #d9d9d9;
+  &:focus {
+    font-weight: 700;
+    border-width: 2px;
+    border-image: linear-gradient(to right, #11998e,#38ef7d);
+    border-image-slice: 1;
+  }
+}
+
+.login__card_buttons {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 40px);  
+}
+
+.login__card_errorMessage {
+  color: $textError;
+}

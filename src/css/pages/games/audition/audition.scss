@@ -1,0 +1,334 @@
+@import '../../../abstract/mixins.scss';
+@import '../../../abstract/constants.scss';
+
+@keyframes hide {
+  0% { left: 0; }
+  100% { 
+    left: -100vw; 
+    width: 0;
+  }
+}
+
+@keyframes show {
+  0% { left: 100vw; }
+  100% { left: 0; }
+}
+
+.audition--game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(../../../../img/common/backgrounds/background7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: -71px 0 0;
+  overflow: hidden;
+  font-family: 'Neucha', cursive;
+
+  .audition--progressBar {
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    transition: ease 1s;
+  }
+  
+  .audition--startScreen {
+    width: 100vw;
+    position: relative;
+    &.hide {
+      animation: hide 2s forwards;
+    }
+  }
+
+  .audition--wordScreen {
+    width: 100vw;
+    position: relative;
+    animation: show 2s forwards;
+    &.hidden {
+      left: 100vw;
+    }
+    &.hide {
+      animation: hide 2s forwards;
+    }
+    @include media-tablet {
+      width: 90%;
+    }
+  }
+  
+  .wordScreen__image {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: none;
+    &.show {
+      display: inline-block;
+    }
+  }
+  
+  .wordScreen__wordArea {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .wordScreen__speaker {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url(../../../../img/games/audition/speaker.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: ease 0.5s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &.show {
+      margin: 0 20px 0 0;
+      height: 60px;
+      width: 60px;
+    }
+  }
+  
+  .wordScreen__word {
+    font-size: 5rem;
+    color: black;
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  
+  .wordScreen__wordsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 70px 0 50px;
+    @include media-mobile-small {
+      margin: 50px 0;
+    }
+  }
+  
+  .wordsList__word {
+    margin: 10px;
+    color: black;
+    font-size: 2.2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    &:hover {
+      background-color: rgba(0, 0, 0,0.2);
+    }
+    span {
+      margin: 0 10px 0 0;
+    }
+    &.correct {
+      background-image: url(../../../../img/games/audition/correct.svg);
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: 5px;
+      padding: 10px 10px 10px 42px;
+      border: 2px solid #29f129;
+    }
+    &.wrong {
+      color: rgba(0, 0, 0,0.2);
+      cursor: not-allowed;
+    }
+    &.checked {
+      text-decoration: line-through;
+      border: 2px solid red;
+    }
+  }
+  
+  .wordScreen__button {
+    font-family: 'Neucha', cursive;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    font-size: 2.2rem;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &.correct {
+      background-image: url(../../../../img/games/audition/arrow.svg);
+      background-size: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 20px 40px;
+    }
+  }
+  
+  .audition--statistic {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    @include media-mobile-big {
+      width: 80%;
+    }
+  }
+  
+  .statistic__title {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+  }
+  
+  .statistic__button {
+    font-family: 'Neucha', cursive;
+    margin: 10px;
+    color: black;
+    font-size: 2.2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    outline: none;
+    &:hover {
+      background-color: rgba(0, 0, 0,0.2);
+    }
+  }
+  
+  .statistic__Answers {
+    height: 200px;
+    overflow-y: scroll;
+    text-align: left;
+    &::-webkit-scrollbar {
+      width: 11px;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.2); 
+    }
+    &.less {
+      height: 25px;
+      overflow: auto;
+    }
+    @include media-mobile-big {
+      height: 165px;
+    }
+  }
+  
+  .Answers__title_correct {
+    div {
+      color: white;
+      background-color: green;
+      border-radius: 20px;
+      width: 40px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+  
+  .Answers__title_wrong {
+    div {
+      color: white;
+      background-color: red;
+      border-radius: 20px;
+      width: 40px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+  
+  .Answers__answer {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .answer__speaker {
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url(../../../../img/games/audition/speaker.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .answer__words {
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .audition--globalStatistic {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: 10px;
+  }
+
+  .globalStatistic__title {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+  }
+
+  .globalStatistic__statTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .statTable__headRow {
+    font-weight: bold;
+    background: #ffe9a6;;
+  }
+
+  .statTable__headData {
+    border: 1px solid #f1dea2;
+  }
+
+  .statTable__bodyRow {
+    &:nth-child(2n) {
+      background: #f4f4f4;
+    }
+    &:hover {
+      background: #fffde8;
+    }
+  }
+
+  .statTable__bodyData {
+    border: 1px solid #e8e9eb;
+    padding: 4px;
+  }
+
+  .globalStatistic__button {
+    font-family: 'Neucha', cursive;
+    margin: 10px;
+    color: black;
+    font-size: 2.2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    outline: none;
+    &:hover {
+      background-color: rgba(0, 0, 0,0.2);
+    }
+  }
+}

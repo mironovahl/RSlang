@@ -1,0 +1,27 @@
+@mixin media-laptop-small {
+  @media (max-width: $laptop-small-width) { @content; }
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile-big {
+  @media (max-width: $mobile-big-width) { @content; }
+}
+
+@mixin media-mobile-small {
+  @media (max-width: $mobile-small-width) { @content; }
+}
+
+@mixin button {
+  margin: 10px;
+  padding: 6px 20px;
+  border: 0;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,162 @@
+@import '../abstract/constants.scss';
+@import '../abstract/mixins.scss';
+
+.allGames__title {
+  text-align: center;
+  padding: 15px 0 0;
+  margin: 10px;
+}
+
+.allGames__description {
+  text-align: center;
+}
+
+.allGames__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 30px;
+}
+
+.allGames__gameCard {
+  position: relative;
+  margin: 10px;
+  color: white;
+  box-sizing: border-box;
+  padding: 16px;
+  width: 480px;
+  height: 144px;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  @include media-mobile-big {
+    background-position: 100% 100%;
+  }
+  &.auditionGame {
+    background-color: #9bc0c6;
+    background-image: url(../../img/games/allGames/banners/audition-banner.svg);  
+  }
+  &.sprintGame {
+    background-color: rgb(88, 97, 135);
+    background-image: url(../../img/games/allGames/banners/sprint-banner.svg);  
+    background-size: 45%;
+    background-position: 240px;
+    @include media-mobile-big {
+      background-position: 100% 100%;
+    }  
+  }
+  &.speakitGame {
+    background-color: rgb(30, 128, 240);
+    background-image: url(../../img/games/allGames/banners/speakit-banner.svg);
+    background-size: 50%;
+  }
+  &.english-puzzleGame {
+    background-color: #c28f80;
+    background-image: url(../../img/games/allGames/banners/english-puzzle-banner.svg);
+  }
+  &.savannahGame {
+    background-color: darkolivegreen;
+    background-image: url(../../img/games/allGames/banners/savannah-banner.svg);
+  }
+  &.squareGame {
+    background-image: url(../../img/games/allGames/banners/square-banner.svg);
+    background-size: 75%;
+    background-position: 195px;
+    background-color: indianred;
+    @include media-mobile-big {
+      background-position: 155% 100%;
+    }  
+  }
+}
+
+.gameCard__icon {
+  background-image: url(.././../img/games/allGames/icons/information.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  z-index: 4;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.gameCard__hint {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 12px 32px 12px 12px;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .2s ease,opacity .2s ease;
+  &.auditionGame {
+    background-color: #9bc0c6;
+  }
+  &.sprintGame {
+    background-color: rgb(88, 97, 135);
+  }
+  &.speakitGame {
+    background-color: rgb(30, 128, 240);
+  }
+  &.english-puzzleGame {
+    background-color: #c28f80;
+  }
+  &.savannahGame {
+    background-color: darkolivegreen;
+    margin: 0;
+    background-image: none;
+  }
+  &.squareGame{
+    background-color: indianred;
+  }
+  &.visible {
+    z-index: 3;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gameCard__hint-skills {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+}
+
+.gameCard__hint-icon {
+  width: 28px;
+  height: 25px;
+  margin: 0 5px 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &.listening {
+    background-image: url(../../img/games/allGames/icons/listening.svg);
+  }
+  &.vocabulary {
+    background-image: url(../../img/games/allGames/icons/vocabulary.svg);
+  }
+  &.writing {
+    background-image: url(../../img/games/allGames/icons/writing.svg);
+  }
+  &.grammar {
+    background-image: url(../../img/games/allGames/icons/grammar.svg);
+  }
+  &.voice {
+    background-image: url(../../img/games/allGames/icons/voice.svg);
+  }
+}

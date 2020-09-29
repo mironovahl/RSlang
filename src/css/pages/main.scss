@@ -1,0 +1,276 @@
+@import '../abstract/constants.scss';
+@import '../abstract/mixins.scss';
+
+.mainPage__content_promo {
+  display: flex;
+  margin-bottom: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  &.hidden {
+    display: none;
+  }
+}
+
+.mainPage_promo_text {
+  max-width: 500px;
+  margin: auto;
+  font-size: 2rem;
+}
+
+.mainPage_promo_image {
+  height: 450px;
+  width: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../img/main/people.png);
+  @include media-tablet {
+    height:300px;
+    margin-top: 20px;
+  }
+}
+
+.mainPage__content_blocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.mainPage-card-locking {
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-image: url(../../img/main/lock.png) ;
+  position: absolute;
+  margin: 5px;
+  top: calc(50% - 35px);
+  right: calc(50% - 45px);
+  &:hover {
+    height: 78px;
+    width: 78px;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.mainPage-smallCard {
+  cursor: pointer;
+  width: 23%;
+  height: 150px;
+  margin: 1%;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  .mainPage-card-locking {
+    height: 50px;
+    width: 50px;
+    top: calc(50% - 25px);
+    right: calc(50% - 35px);
+    &:hover {
+      height: 55px;
+      width: 55px;
+    }
+  }
+  @include media-tablet {
+    width: 48%;
+    margin: 1%;
+  }
+}
+
+.mainPage-bigCard {
+  cursor: pointer;
+  width: 48%;
+  height: 316px;
+  margin: 1%;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  .mainPage_block-title {
+    font-size: 3rem;
+    margin: 10px;
+  }  
+  @include media-tablet {
+    width: 98%;
+  }
+}
+
+.mainPage-card-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  border-radius: 5px;
+}
+
+.mainPage-card-link, .mainPage-card-linkAll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 5px;
+}
+
+.mainPage_block-title {
+  font-size: 2rem;
+  margin: 10px;
+  color: #4d4c61;
+}
+
+.mainPage_block-statistics {
+  background-image: url(../../img/main/statistics.png);
+}
+
+.mainPage_block-promo {
+  background-image: url(../../img/main/promo.png);
+}
+
+.mainPage_block-team {
+  background-image: url(../../img/main/aboutTeam.png);
+}
+
+.mainPage_block-card {
+  background-image: url(../../img/main/card.png);
+}
+
+.mainPage_block-dictionary {
+  margin-top: -158px;
+  background-image: url(../../img/main/dictionary.png);
+  @include media-tablet {
+    margin: 1%;
+  }
+
+}
+
+.mainPage_block-game {
+  background-image: url(../../img/main/game.png);
+}
+
+.mainPage_promo_button {
+  button {
+    cursor: pointer;
+    margin: 10px;
+    height: 35px;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 16px;
+    transition: 0.1s;
+    font-size: 2rem;
+  }
+}
+
+.mainPage_button-login {
+  width: 100px;
+  background: $buttonCorrect;
+  box-shadow: -3px -3px $buttonCorrectShadow inset;
+  &:active{
+    background: $buttonCorrectActive;
+    box-shadow: 3px 3px $buttonCorrectActiveShadow inset;
+  }
+  &:hover{
+    background: $buttonCorrectHover;
+  }
+}
+
+.mainPage_button-signin {
+  width: 200px;
+  background: #fde28e;
+  box-shadow: -3px -3px #e2c774 inset;
+  &:active{
+    background: #efc74d;
+    box-shadow: 3px 3px #caa433 inset;
+  }
+  &:hover{
+    background: #ffe9a6;
+  }
+}
+
+.mainPage_promo_button {
+  text-align: center;
+}
+
+.mainPage__content_message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(8,15,26,.59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.hidden {
+    display: none;
+  }
+ }
+
+.mainPage_message-card {
+  width: 280px;
+  text-align: center;
+  height: 200px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow:3px 3px 3px darkgrey;
+  margin:auto;
+}
+
+.mainPage_message-card_button {
+  cursor: pointer;
+  height: 35px;
+  color: white;
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  transition: 0.1s;
+  font-size: 2rem;
+  width: 90%;
+  background: $buttonCorrect;
+  box-shadow: -3px -3px $buttonCorrectShadow inset;
+  &:active{
+    background: $buttonCorrectActive;
+    box-shadow: 3px 3px $buttonCorrectActiveShadow inset;
+  }
+  &:hover{
+    background: $buttonCorrectHover;
+  }
+}
+
+.mainPage_message-card_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #fde28e;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.mainPage_message-buttonClose {
+  background: none;
+  background-image: url(../../img/main/close.png);
+  background-size: cover;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.mainPage_message-card_description {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+.mainPage-button-link {
+  text-decoration: none;
+  outline: none;
+}
+
+

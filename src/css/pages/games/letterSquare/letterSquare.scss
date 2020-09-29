@@ -1,0 +1,654 @@
+@import '../../../abstract/mixins.scss';
+@import '../../../abstract/constants.scss';
+
+.letterSquare {
+  font-family: Neucha, sans-serif;;
+  margin: -71px 0 0;
+  padding: 0;
+  height: 100vh;
+  background-size: 100vw 100vh;
+  background-image: url('../../../../img/common/backgrounds/background6.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.letterSquare__tip {
+  padding: 0 15px 0 15px;
+  font-size:  2.4vh;
+}
+
+.letterSquare__choice {
+  font-size:  1.5vh;
+}
+
+.letterSquare--description {
+  text-align: center;
+  padding: 0 15px 0 15px;
+  font-size: 2rem;
+}
+
+.letterSquare__heading {
+  padding: 0 15px 0 15px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.letterSquare--btn__startBtn {
+  font-family: Neucha, sans-serif;;
+  font-size: 2em;
+  border: 0px;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  width: 140px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  background: rgb(105, 190, 98);
+  box-shadow: -3px -3px rgb(93, 173, 90) inset;
+  &:active{
+    background: rgb(55, 134, 59);
+    box-shadow: 3px 3px #3faf52 inset;
+  }
+  &:hover{
+    background: rgb(143, 207, 137);
+  }
+}
+
+  
+.letterSquare--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.letterSquare--wordList {
+  margin-top: 120px;
+  text-align: center;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 5px 5px 5px darkgrey;
+  overflow: hidden;
+  width: 240px;
+  height: 420px;
+  margin-left: 8em;
+}
+  
+.letterSquare--wordList__titleList {
+  height: 60px;
+  width: 240px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(to top, #f8b278, #fc8b4a);
+  text-decoration: none;
+  text-align: center;
+}
+
+.letterSquare--wordList__title {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  margin-top: 0.8em;
+  font-size: 2em;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+  
+.letterSquare--wordList__itemList {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.8em;
+  text-decoration: none;
+  text-align: center;
+}
+  
+.letterSquare---wordList__btnCheck {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.letterSquare-hidden {
+  display: none;
+}
+
+.letterSquare--game__time {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 7vh;
+  color: rgb(0, 0, 0);
+}
+
+.letterSquare--wordList__foundWord {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.8em;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: line-through;
+  color: #cfcccc;
+}
+  
+.letterSquare--table {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 5em;
+  width: 600px;
+  height: 600px;
+}
+  
+.letterSquare--td {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 5vh;
+  font-weight: bold;
+  font-size: 3em;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 -1px rgba(0,0,0,.5);
+  user-select: none;
+  border: 1px solid #266e32;
+  border-radius: 5px;
+  outline: none;
+  background: rgb(105, 190, 98);
+  }
+.letterSquare--td:hover {
+  background: rgb(136, 245, 126);
+}
+
+.letterSquare--td_active {
+  height: 4vh;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 14px;
+  font-weight: bold;
+  font-size: 3em;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 -1px rgba(0,0,0,.5);
+  user-select: none;
+  border: 1px solid #794902;
+  border-radius: 5px;
+  outline: none;
+  background: #fa883c linear-gradient(#fca543, #fca258 80%);
+}
+
+.letterSquare--td_active:hover {
+  background: #faa777 linear-gradient(#fc9856, #ff9252 80%);
+}
+
+.letterSquare--td_guessed {
+  height: 4vh;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 14px;
+  font-weight: bold;
+  font-size: 3em;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 -1px rgba(0,0,0,.5);
+  user-select: none;
+  border: 1px solid #4e4e4e;
+  border-radius: 5px;
+  outline: none;
+  background: #bdbcbc;
+}
+
+.td_guessed:hover {
+  background: #d1d1d1;
+}
+
+.letterSquare--wordList__btnCheck {
+  font-family: Neucha, sans-serif;;
+  font-size: 1.5em;
+  border: 0px;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  width: 150px;
+  margin-top: 25px;
+  margin-left: 0px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgb(105, 190, 98);
+  box-shadow: -3px -3px rgb(93, 173, 90) inset;
+  &:active{
+    background: rgb(55, 134, 59);
+    box-shadow: 3px 3px #3faf52 inset;
+  }
+}
+
+.letterSquare--wordList__btnRemove {
+  font-family: Neucha, sans-serif;;
+  font-size: 1.5em;
+  border: 0px;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: 0px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgb(255, 74, 68);
+  box-shadow: -3px -3px rgb(252, 61, 48) inset;
+  &:active{
+    background: rgb(187, 53, 44);
+    box-shadow: 3px 3px #fc2424 inset;
+  }
+}
+
+.letterSquare--statistic__card {
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  width: 350px;
+  height: 500px;
+  border-radius: 16px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+.letterSquare--statistic__numberWordsFound {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top: 0.8em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.letterSquare--statistic__numberWordsNotFound {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top: 0.8em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.letterSquare--statistic__title {
+  font-size: 1.5em;
+  height: 90px;
+  width: 350px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(to top, #faa159, #fd8844);
+  text-decoration: none;
+  text-align: center;
+}
+
+.letterSquare--statistic__button--next {
+  font-family: Neucha, sans-serif;;
+  border: 0px;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 0px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgb(105, 190, 98);
+  box-shadow: -3px -3px rgb(93, 173, 90) inset;
+  &:active{
+    background: rgb(24, 65, 26);
+    box-shadow: 3px 3px #3faf52 inset;
+  }
+}
+
+.letterSquare--statistic__button--play {
+  font-family: Neucha, sans-serif;;
+  border: 0px;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.1s;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 0px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgb(209, 200, 68);
+  box-shadow: -3px -3px rgb(201, 162, 79) inset;
+  &:active{
+    background: rgb(211, 187, 53);
+    box-shadow: 3px 3px #be9335 inset;
+  }
+}
+
+.letterSquare--statistic__button--back {
+  display: inline-block;
+  font-family: Neucha, sans-serif;;
+  color: black;
+  padding-top: 20px;
+  font-size: 1.8em;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+  }
+}
+
+.letterSquare--statistic__button--statistics {
+  display: inline-block;
+  font-family: Neucha, sans-serif;;
+  color: black;
+  padding-top: 15px;
+  font-size: 1.8em;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+  }
+}
+
+
+.letterSquare--statistic__wordList__itemList {
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 0.3em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.letterSquare--statistics__audio {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-image: url('../../../../img/games/savannah/audio.png');
+  background-size: 20px 20px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  flex-basis: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  
+  @media (hover: hover) {
+      &:hover {
+          opacity: 0.7;
+      }
+  }
+}
+
+.letterSquare--statistics__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letterSquare--globalStatistic {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.letterSquare--globalStatistic__title {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+}
+
+.letterSquare--globalStatistic__statTable {
+  font-size: 2rem;
+  margin-left: 7%;
+  margin-top: 10%;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.letterSquare--statTable__headRow {
+  font-weight: bold;
+  background: #ffe9a6;;
+}
+
+.letterSquare--statTable__headData {
+  border: 1px solid #f1dea2;
+}
+
+.letterSquare--statTable__bodyRow {
+  &:nth-child(2n) {
+    background: #f4f4f4;
+  }
+  &:hover {
+    background: #fffde8;
+  }
+}
+
+.letterSquare--statTable__bodyData {
+  border: 1px solid #e8e9eb;
+  padding: 4px;
+}
+
+.letterSquare--globalStatistic__button {
+  margin-top: 10px;
+  margin-left: 43%;
+  font-family: 'Neucha', cursive;
+  color: black;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+  &:hover {
+    background-color: rgba(0, 0, 0,0.2);
+  }
+}
+
+
+@media (max-width: 960px) { 
+
+  .letterSquare--container {
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .letterSquare--wordList {
+    margin-left: 0px;
+    margin-top: 60px;
+    border-radius: 12px;
+    width: 400px;
+    height: 140px;
+  }
+
+  .letterSquare--wordList__titleList {
+    height: 40px;
+    width: 400px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+  }
+  
+  .letterSquare--wordList__title {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    margin-top: 0.5em;
+    font-size: 2em;
+  }
+    
+  .letterSquare--wordList__itemList {
+    display: flex;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .letterSquare--wordList__foundWord {
+    display: flex;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .letterSquare--game__time {
+    font-size: 6vh;
+    margin-bottom: 5px;
+  }
+
+  .letterSquare--table {
+    padding-top: 40px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .letterSquare--td {
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    font-size: 2.4em;
+  }
+
+  .letterSquare--td_active {
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    font-size: 2.4em;
+  }
+
+  .letterSquare--td_guessed {
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    font-size: 2.4em;
+  }
+
+  .letterSquare--globalStatistic__button {
+    margin-left: 35%;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 410px) {  
+
+  .letterSquare--container {
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .letterSquare--wordList {
+    margin-left: 0px;
+    margin-top: 20px;
+    border-radius: 12px;
+    width: 300px;
+    height: 140px;
+  }
+
+  .letterSquare--wordList__titleList {
+    height: 30px;
+    width: 300px;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .letterSquare--wordList__title {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    margin-top: 0.3em;
+    font-size: 2em;
+  }
+    
+  .letterSquare--wordList__itemList {
+    display: flex;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .letterSquare--wordList__foundWord {
+    display: flex;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .letterSquare--game__time {
+    font-size: 5vh;
+    margin-bottom: 5px;
+  }
+
+  .letterSquare--table {
+    padding-top: 15px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .letterSquare--td {
+    height: 25px;
+    width: 25px;
+    border-radius: 1.5px;
+    font-size: 2em;
+  }
+
+  .letterSquare--td_active {
+    height: 25px;
+    width: 25px;
+    border-radius: 1.5px;
+    font-size: 2em;
+  }
+
+  .letterSquare-- td_guessed {
+    height: 25px;
+    width: 25px;
+    border-radius: 1.5px;
+    font-size: 2em;
+  }
+
+  .letterSquare--statistic__card {
+    width: 280px;
+    height: 460px;
+  }
+
+  .letterSquare--statistic__title {
+    font-size: 1.5em;
+    height: 65px;
+    width: 280px;
+  }
+
+  .letterSquare--statistic__button--back {
+    padding-top: 10px;
+    font-size: 1.5em;
+  }
+  
+  .letterSquare--statistic__button--statistics {
+    padding-top: 8px;
+    font-size: 1.5em;
+  }
+
+  .letterSquare--wordList__btnCheck {
+    width: 120px;
+    margin-top: 10px;
+  }
+  
+  .letterSquare--wordList__btnRemove {
+    width: 120px;
+    margin-top: 10px;
+  }
+
+  .letterSquare--globalStatistic__statTable {
+    font-size: 1.5rem;
+    margin-left: 3%;
+    margin-top: 10%;
+  }
+
+  .letterSquare--globalStatistic__button {
+    margin-left: 25%;
+    font-size: 1.5rem;
+  }
+}

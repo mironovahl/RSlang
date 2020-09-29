@@ -1,0 +1,58 @@
+.footer {
+  background-color: #2d303a;
+  z-index: 3;
+}
+
+.footer__content {
+  text-align: center;
+}
+
+.footer__links {
+  padding: 0;
+}
+
+.footer_link {
+  font-size: 1.5rem;
+  color: #e6e9ee;
+  text-decoration: none;
+  &:hover {
+    color: #eef083;
+  }
+}
+
+.footer__navList {
+  padding: 0;
+}
+
+.footer__navItem {
+  display: inline;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.footer__navItem a {
+  text-decoration: none;
+  color: #e6e9ee;
+  font-size: 1.4rem;
+  font-weight: 400;
+  &:hover {
+    color: orange;
+  }
+}
+
+.footer__copyright {
+  color: #e6e9ee;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copyright-githubImage {
+  background-image: url(../../img/aboutTeam/github.png);
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  margin: 0 5px 0 0;
+}

@@ -1,0 +1,326 @@
+@import '../abstract/constants.scss';
+@import '../abstract/mixins.scss';
+
+.learn {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.6rem;
+}
+
+.learn-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: white;
+    background-image: url(https://faviconer.net/generator.php?filmstrip&image=5&speed=9&fore_color=000000&back_color=FFFFFF&size=64x64&transparency=1&reverse=0&orig_colors=0&gray_transp=1&image_type=2&inverse=0&flip=0&frames_amount=8&word=237-261-157-41-266-237-41-257-237-266-57-41-227-41-36-36-36);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}
+
+.learn--progress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 655px;
+
+    @include media-tablet {
+        width: 100%;
+    }
+}
+
+.learn--progress__background {
+    width: 600px;
+    height: 12px;
+
+    flex-grow: 1;
+    border-radius: 10px;
+    background-color: rgba(#ffe9a6, 0.5);
+
+    @include media-tablet {
+        width: 90%;
+    }
+}
+
+.learn--progress__bar {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #efc74d;
+    transition: ease 1s;
+}
+
+.learn--progress__done,
+.learn--progress__total {
+    margin: 0 5px;
+}
+
+.learn--card {
+    margin-bottom: 30px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
+
+    @include media-tablet {
+        width: 90%;
+    }
+
+    @include media-mobile-small {
+        width: 100%;
+    }
+}
+
+.learn--card__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    background-color: #ffe9a6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.learn--card__icon {
+    margin: 5px 8px;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &-settings {
+        background-image: url('../../img/learn/gear.svg');
+    }
+
+    &-delete {
+        background-image: url('../../img/learn/delete.svg');
+    }
+
+    &-brain {
+        background-image: url('../../img/learn/brain.svg');
+    }
+
+    &-speaker {
+        background-image: url('../../img/learn/speaker.svg');
+    }
+
+    &-headphones {
+        background-image: url('../../img/learn/headphones.svg');
+    }
+
+    &-book {
+        background-image: url('../../img/learn/book.svg');
+    }
+
+    &-inactive {
+        opacity: 0.5;
+    }
+
+    &-hidden {
+        display: none;
+    }
+
+    &-active {
+        filter: invert(1);
+    }
+}
+
+.learn--card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.learn--card__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include media-mobile-big {
+        flex-direction: column;
+    }
+}
+
+.learn--card__image {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.learn--card__sentences {
+    
+    @include media-mobile-big {
+        text-align: center;
+    }
+}
+
+.learn--card__textMeaning,
+.learn--card__textMeaningTranslate,
+.learn--card__textExample,
+.learn--card__textExampleTranslate {
+    margin: 0 10px 15px;
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.learn--card__textMeaning i,
+.learn--card__textExample b {
+    color: #586187;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.learn--card__inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.learn--card__input {
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 5px 8px;
+    background-color: rgba(#586187, 0.3);
+    border-radius: 3px;
+    border: none;
+    color: #586187;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    height: 24px;
+    overflow: hidden;
+    overflow-wrap: normal;
+    transition: 1s ease;
+}
+
+.learn--card__enterAnswer {
+    position: absolute;
+    right: -35px;
+    top: 0;
+    margin: 5px 0;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../img/learn/enter-word.svg');
+    cursor: pointer;
+    transition: transform 0.1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.learn--card__transcription {
+    margin: 5px 0;
+    color: #1e80f0;
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.learn--card__wordTranslate {
+    margin: 10px 0;
+    color: #586187;
+    font-size: 2rem;
+    font-weight: bold;
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.learn--card__complexity {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 10px;
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.learn--card__complexityBtn {
+    @include button;
+    padding: 0;
+    margin: 0 5px;
+    background-color: transparent;
+    text-decoration: underline;
+    transition: transform 0.1s;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:active {
+        transform: scale(1.1);
+    }
+}
+
+.learn--button {
+    @include button; 
+
+    &-hidden {
+        display: none;
+    }
+
+    background: #fde28e;
+    box-shadow: inset -3px -3px #e2c774;
+    border-radius: 6px;
+    font-size: 2rem;
+
+    &:hover {
+        background: #ffe9a6;
+    }
+
+    &:active {
+        background: #efc74d;
+        box-shadow: inset 3px 3px #caa433;
+    }
+}
+
+.learn--card__stopGame {
+    h2 {
+        text-align: center;
+    }
+}
+
+.learn--card__statistic {
+    text-align: center;
+    border-bottom: 1px solid #ffe9a6;
+
+    .complited {
+        color: #1f8b8d;
+    }
+
+    .correct {
+        color: #40c781;
+    }
+
+    .new {
+        color: orange;
+    }
+
+    .series {
+        color: #62c1c5;
+    }
+}

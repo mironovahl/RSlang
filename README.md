@@ -1,1 +1,2 @@
-# RSlang
+# rslang
+RS Language Course Project

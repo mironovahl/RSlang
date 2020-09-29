@@ -1,0 +1,257 @@
+.statistic {
+    font-family: Neucha, sans-serif;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistic__background {
+    background-image: url('../../img/common/backgrounds/background9.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-size: 100vw 100vh;
+}
+
+.statistic__card {
+    margin-top: 50px;
+    width: 550px;
+    height: 540px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+.statistic__heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 0.8em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.statistic__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistic__wordList {
+    margin-left: 70px;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+        text-decoration: none;
+        color: rgb(56, 56, 56);
+    }
+}
+
+.statistic__numberWordsStudied {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.statistic__percentageLearnedWords {
+    margin-top: -250px;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.statistic__data {
+    margin-top: -12px;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas {
+    margin-top: 20px;
+}
+
+#canvas2 {
+    margin-top: -5px;
+    width: 600px;
+    height: 300px;
+} 
+
+/*.statistic__heading--game {
+    color: black;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 0.8em;
+    text-decoration: none;
+    text-align: center;
+}
+
+#statistic__table {
+    border-radius: 4px;
+    padding-top: 10px;
+    width: 500px;
+    height: 400px;
+}
+
+.statistic__td {
+    border: 1px solid #000000;
+    margin-left: 0px;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font-size: 1.5em;
+}*/
+
+.statistic__back {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+        text-decoration: none;
+        color: rgb(56, 56, 56);
+    }
+}
+
+.statistic__wordsDatesList {
+    margin-top: 40px;
+    margin-left: 110px;
+    width: 350px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+
+    &::-webkit-scrollbar {
+        width: 11px;
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.2); 
+    }
+}
+
+.statistic__datesItem {
+    margin: 3px;
+    font-size: 2em;
+    color: rgb(0, 37, 8);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.statistic__wordItem {
+    font-size: 1.8em;
+    color: black;
+}
+
+.statistic__hidden {
+    display: none;
+}
+
+@media (max-width: 620px) {  
+    #canvas {
+        margin-top: 20px;
+        width: 300px;
+        height: 150px;
+    }
+    
+    #canvas2 {
+        margin-top: 12px;
+        width: 300px;
+        height: 150px;
+    } 
+    .statistic__card {
+        margin-top: 20px;
+        width: 280px;
+        height: 280px;
+        border-radius: 8px;
+    }
+    
+    .statistic__heading {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 0.8em;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .statistic__wordList {
+        margin-left: 70px;
+        font-size: 1em;
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            text-decoration: none;
+            color: rgb(56, 56, 56);
+        }
+    }
+    
+    .statistic__numberWordsStudied {
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .statistic__percentageLearnedWords {
+        margin-top: -130px;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .statistic__data {
+        margin-top: -12px;
+        font-size: 1em;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .statistic__wordsDatesList {
+        margin-top: 25px;
+        margin-left: 60px;
+        width: 150px;
+        max-height: 170px;
+    }
+
+    .statistic__datesItem {
+        margin: 1.5px;
+        font-size: 1em;
+        color: rgb(0, 37, 8);
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .statistic__wordItem {
+        font-size: 1em;
+        color: black;
+    }
+
+    .statistic__back {
+        margin-top: 20px;
+        font-size: 1em;
+    }
+    
+}

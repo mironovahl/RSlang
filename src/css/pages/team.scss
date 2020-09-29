@@ -1,0 +1,168 @@
+@import '../abstract/mixins.scss';
+@import '../abstract/constants.scss';
+
+.header {
+  z-index: 4;
+}
+
+.aboutTeam__card {
+  position: relative;
+  width: 420px;
+  height: 200px;
+  margin: 12px;
+  @include media-mobile-big {
+    width: 320px;
+    height: 300px;
+    margin-bottom: 80px;
+  }
+}
+
+.aboutTeam {
+  background-color: rgb(250, 250, 161);
+}
+
+.aboutTeam_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutTeam__card_image {
+  height: 180px;
+  width: 180px;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 8px 0;
+  z-index: 2;
+  position: absolute;
+  box-shadow: 0 3px 13px rgba(0,0,0,0.25);
+  @include media-mobile-big {
+    margin: 0 calc(50% - 90px);
+  }
+
+}
+
+.imageDdenis {
+  background-image: url(../../img/aboutTeam/denis.jpg);
+}
+
+.imageElena {
+  background-image: url(../../img/aboutTeam/elena.jpg);
+}
+
+.imageVictor {
+  background-image: url(../../img/aboutTeam/victor.jpg);
+}
+
+.imageDmitry {
+  background-image: url(../../img/aboutTeam/dmitry.jpg);
+}
+
+.imageYaroslava {
+  background-image: url(../../img/aboutTeam/yaroslava.jpg);
+}
+
+.imageKate {
+  background-image: url(../../img/aboutTeam/kate.jpg);
+  transform: scale(-1, 1);
+}
+
+.imageEvgenii {
+  background-image: url(../../img/aboutTeam/evgenii.jpg);
+}
+
+.aboutTeam__card_text {
+  background-color: white;
+  width: 210px;
+  margin-left: 90px;
+  padding: 0 15px 0 105px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: -3px -3px rgba(0,0,0,0.15) inset;
+  position: relative;
+  @include media-mobile-big {
+    width: 280px;
+    height: 180px;
+    margin: 100px auto;
+    padding-top: 90px;
+    padding-left: 10px;
+  }
+}
+
+.aboutTeam__card_name {
+  font-family: 'Neucha';
+  font-size: 2.5rem;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.aboutTeam__card_contact {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0;
+  font-size: 2rem;
+}
+
+.aboutTeam__card_contact-github {
+  display: flex;
+}
+
+.aboutTeam__card_position {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.aboutTeam__card_about {
+  font-family: 'Neucha';
+  text-align: justify;
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.aboutTeam__card_contact-githubImage {
+  background-image: url(../../img/aboutTeam/github.png);
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  margin: 0 10px 0 0;
+}
+
+.aboutTeam__card_contact-githubLink {
+  margin: auto;
+  text-decoration: none;
+  outline: none;
+  color: $textColor;
+  &:hover {
+    color: $linksHover
+  }
+}
+
+.aboutTeam__card_icon {
+  height: 45px;
+  width: 45px;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  z-index: 3;
+  @include media-mobile-big {
+    margin:  0  0 120px 70px;
+  }
+
+}
+
+.iconMentor {
+  background-image: url(../../img/aboutTeam/icons/mentor.png);
+}
+
+.iconStudentGirl {
+  background-image: url(../../img/aboutTeam/icons/studentGirl.png);
+}
+
+.iconStudent {
+  background-image: url(../../img/aboutTeam/icons/student.png);
+}
+
+.iconTeamLead {
+  background-image: url(../../img/aboutTeam/icons/teamLead.png);
+}

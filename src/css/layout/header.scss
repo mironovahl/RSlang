@@ -1,0 +1,154 @@
+@import '../abstract/constants.scss';
+@import '../abstract/mixins.scss';
+
+.header{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+  background-color: $light;
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
+  top: 0;
+  color: white;
+  background-color: #2d303a;
+  
+  .header__wrapper{
+    max-width: 1020px;
+    width: 100%;
+    margin:auto;
+    height: 71px;
+}
+
+
+.header__burger{
+    display: none;
+}
+.rotate{
+    transform: rotate(90deg);
+}
+.notdisplay{
+    display: none;
+}
+
+.hidden {
+    overflow: hidden;
+}
+h1{
+    margin: 0;
+    font-size: 2.5rem;
+}
+.logo{
+    margin: 20px auto auto 38px;
+    float:left;
+    color:white;
+    font-size: 2.5rem;
+    text-decoration: none;
+    letter-spacing: -0.6px;
+}
+
+nav {
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    margin: 19px 40px auto auto;
+    
+  }
+#navigation a{
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+li{
+    float:left;
+    color: #494e62;
+    letter-spacing: -0.4px;
+    margin-left: 20px;
+}
+li:first-child{
+    list-style-type: none;
+}
+.nav-item__navigation a{
+    color: white;
+}
+a.nav_selected{
+    color: green;
+}
+li a:not(.nav_selected):hover{
+    color: #74cfa2;
+}
+#burger {
+  
+      display: none;
+  
+}
+
+@media (max-width: 768px){
+    #burger{
+        display: block;
+    }
+    .header__burger {
+      cursor:pointer;
+        display: block;
+        background: url(./../../img/header/Burger-menu-icon.png);
+        width: 25px;
+        height: 20px;
+        border: 0;
+        position: absolute;
+        left: 20px;
+        top: 26px;
+        outline: none;
+    }
+    .header__burger-navigation{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+       
+    }
+    .header__burger-nav{
+        position: fixed;
+        width: 278px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #2D303A;
+        box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .logo-burger{
+        margin: 26px auto auto 25%;
+    }
+    .header__navigation {
+        font-size: 2.4rem;
+        
+    }
+    .header__navigation a{
+        padding-bottom: 29px;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    .header__navigation a.nav_selected{
+        color: green;
+    }
+  
+    .header{
+        color: white;
+        background-color: #2d303a;
+        position: fixed;
+        width: 100vw;
+        padding-bottom: 13px;
+        z-index: 1;
+    }
+   
+    #navigation{
+    display: none;
+    }
+    .logo{
+        margin: 26px auto auto 39.5%;
+    }
+    .logo h1{
+        font-size: 19.6875px;
+    }  
+}
+
+}

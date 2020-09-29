@@ -1,0 +1,242 @@
+$imgPath: '../../img/dictionary/';
+$currentColor:#99ecc1;
+$hardColor: #fde28e;
+$deletedColor:#f47c7c;
+.dictionary--container{
+    margin: 0 auto;
+    max-width: 1024px;
+    color: black;
+
+}
+
+.dictionary--container{
+    .hidden {
+        display: none;
+    }
+    .dictionarry--navigation{
+        font-family: 'Montserrat', sans-serif;
+        display:flex;
+        
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media(max-width: 700px) {
+            justify-content: center;
+            .dictionary--wordsButton{
+                order: 8;
+                & > div {
+                font-size: 14px;
+                
+                }
+            }
+        }
+
+        .dictionary--wordsButton{
+            display: flex;
+            align-items: flex-end;
+            padding-top: 10px;
+            font-size: 24px;
+            & > div {
+                text-align: center;
+                color: white;
+                font-weight: 600;
+                padding: 6px;
+                cursor: pointer;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                &:hover{
+                    box-shadow: 0px -2px 1px 2px rgba(63, 50, 50, 0.06);
+                }
+            }
+            .dictionary--currentWordsButton{
+                background-color: $currentColor;
+            }
+            .dictionary--hardWordsButton{
+                background-color: $hardColor;
+            };
+            .dictionary--deletedWordsButton{
+                background-color: $deletedColor;
+            };
+        }
+        .dictionarry--settings{
+            display: flex;
+            
+            padding: 10px;
+            width: 200px;
+            & > div {
+                
+                background-image: url($imgPath + 'sound_white.png');
+                width: 32px;
+                height: 32px;
+                background-color: green;
+                margin-left: 10px;
+                background-size: 25px 25px;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                border-radius: 7px;
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0px 0px 4px -2px;
+                }
+            }
+            .unactive{
+                background-color: #a9a9a9;
+            }
+            .dictionarry--buttonExample {
+                background-image: url($imgPath + 'text_white.svg');
+            }
+            .dictionarry--buttonExplanation {
+                background-image: url($imgPath + 'abc.svg');
+            }
+            .dictionarry--buttonTranscription {
+                background-image: url($imgPath + 'music_note.svg');
+            }
+            .dictionarry--buttonImg {
+                background-image: url($imgPath + 'image_white.svg');
+            }
+        }
+}
+    .dictionary--currentWords {
+        background-color: $currentColor;
+        }
+    .dictionary--hardWords {
+        background-color: $hardColor;
+    } 
+    .dictionary--deletedWords {
+        background-color: $deletedColor;
+    } 
+    .page {
+                
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+       
+        .wordCard {
+            border-radius: 10px;
+            box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            display: flex;
+            
+            align-items: center;
+            margin: 5px;
+            .emptyText {
+                margin: 20px auto;
+                height: 35px;
+                
+            }
+            .wordData{
+               
+                flex-grow: 1;
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                & > div {
+                    margin: 5px;            
+                }
+                .sound__icon{
+                    background-image: url($imgPath + 'sound.png');
+                    width: 40px;
+                    height: 40px;
+                    background-size: 30px 30px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    box-sizing: border-box;
+                    &:hover {
+                        cursor: pointer;
+                        box-shadow: 0px 0px 4px -2px;
+                    }
+                }
+                .textTranscription {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-right: 5px;
+                    font-size: 18px;
+                    width: 200px;
+                    div {
+                        padding-right: 5px;
+                    }
+                    .text {
+                       font-weight: bold;
+                    }
+                    .transcription {
+                        color: gray;
+                    }
+                    .hidden {
+                        display: none;
+                    }
+                }
+    
+                .translation {
+                    font-size: 18px;
+                }
+                .longRead {
+                    margin: 0 auto;
+                    padding: 5px;
+                    font-size: 16px;
+                    width: 500px;
+                    .meaning{
+                        color: rgb(112, 112, 112);
+                    }
+                    .example {
+                        quotes: "“" "”"; 
+                    }
+                    .progress {
+                        padding-top: 5px;
+                        font-size: 14px;
+                    } 
+                }
+               
+                .imgContainer {
+                    margin: 0 auto;
+                    padding-top: 5px;
+                    .wordImg {
+                        width: 150px;               
+                    }
+                    width: 150px;
+                }
+                @media (max-width: 600px){
+                    .longRead {
+                    width: auto;
+                    }
+                }
+                @media (max-width: 370px){
+                    .textTranscription {
+                    width: 100px;
+                    }
+                }
+            }
+                        
+            .wordButtonContainer {
+                display: flex;
+                flex-direction: column;
+                margin:5px; 
+
+                & > div {
+                    margin: 5px 8px;
+                    background-size: contain;
+                    width: 25px;
+                    height: 25px;
+                    cursor: pointer;
+                    transition: transform .1s;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                                
+                .wordDeleteButton{
+                    background-image: url(../../img/dictionary/basket.svg);
+                }
+                .wordRestoreButton{
+                    background-image: url(../../img/dictionary/unbasket.svg);
+                }
+                .wordHardButton{
+                    background-image: url(../../img/dictionary/brain.svg);
+                }
+                .wordCurrentButton{
+                    background-image: url(../../img/dictionary/unbrain.svg);
+                }
+            }
+        }
+    
+    }
+
+}

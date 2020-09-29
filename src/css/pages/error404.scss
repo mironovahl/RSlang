@@ -1,0 +1,32 @@
+.page404 {
+  padding: 20px 0;
+  background:#fff;
+  font-family: 'Neucha', cursive;
+}
+
+.page404__bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page404__title {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.page404__content {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.link_404{			 
+	color: white;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+  text-decoration: none;
+}
