@@ -5,7 +5,6 @@ RS Language Course Project
 Stack:
 - Vanilla js
 - Jest
-- TypeScript
 - Sass
 - Webpack
 
